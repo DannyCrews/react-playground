@@ -1,13 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-var returnLabel = {
-  name: 'Full Name',
-  addressLine1: '123 Fake Street',
-  addressLine2: 'Boston, MA 02118'
-};
-
-
 var AddressLabel = React.createClass ({
   propTypes: {
     mailingLabel: React.PropTypes.shape({
@@ -16,7 +9,6 @@ var AddressLabel = React.createClass ({
       addressLine2: React.PropTypes.string.isRequired
     }).isRequired
   },
-
   render: function() {
     var { name, addressLine1, addressLine2 } = this.props.mailingLabel; // destructure to pull object from props
     return (
@@ -27,10 +19,34 @@ var AddressLabel = React.createClass ({
       </div>
     );
   }
-
 });
 
+var Envelope = React.createClass ({
+  render: function() {
+    var {toPerson, fromPerson} = this.props;
+    return (
+      <div className='envelope'>
+        <AddressLabel className='to-label' mailingLabel={toPerson} />
+        <AddressLabel classname='from-label' mailingLabel={fromPerson} />
+      </div>
+    );
+  }
+});
+
+var returnLabel = {
+  name: 'Full Name',
+  addressLine1: '123 Fake Street',
+  addressLine2: 'Boston, MA 02118'
+};
+
+var recipientLabel = {
+  name: 'Mrs. Receiver',
+  addressLine1: '123 Fake Street',
+  addressLine2: 'San Francisco, CA 94101'
+};
+
+
 ReactDOM.render(
-  <AddressLabel mailingLabel={returnLabel}/>,
+  <Envelope toPerson={recipientLabel} fromPerson={returnLabel} />,
   document.getElementById('root')
 );
