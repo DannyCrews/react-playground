@@ -1,6 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+var Stamp = React.createClass ({
+  render: function() {
+    return (
+      <div className='stamp'>Stamp</div>
+    );
+  }
+});
+
 // AddressLabel component takes mailingLabel as props
 // child component
 var AddressLabel = React.createClass ({
@@ -26,6 +34,11 @@ var AddressLabel = React.createClass ({
 // Envelope component takes toPerson and fromPerson as props
 // parent component
 var Envelope = React.createClass ({
+  propTypes: {
+    toPerson: React.PropTypes.object,
+    fromPerson: React.PropTypes.object
+  },
+
   render: function() {
     var {toPerson, fromPerson} = this.props;
     // Return child components
@@ -33,6 +46,7 @@ var Envelope = React.createClass ({
       <div className='envelope'>
         <AddressLabel className='to-label' mailingLabel={toPerson} />
         <AddressLabel classname='from-label' mailingLabel={fromPerson} />
+        <Stamp/>
       </div>
     );
   }
