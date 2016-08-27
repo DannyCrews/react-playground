@@ -85,6 +85,7 @@ var Expiration = React.createClass ({
   render: function() {
     return (
       <div className="expiration">
+        <span className="valid-thru">Valid Thru</span>
         {this.props.expiration}
       </div>
     );

@@ -21,7 +21,7 @@ body {
 }
 
 .logo {
-  postion: absolute;
+  position: absolute;
   right: 40px;
   top: 40px;
   font-size: 50px;
@@ -42,6 +42,14 @@ body {
 .name {
   bottom: 40px;
   font-size: 36px;
+}
+
+.valid-thru {
+  width: 30px;
+  display: inline-block;
+  font-size: 14px;
+  text-transform: uppercase;
+  margin-right: 15px;
 }
 
 .expiration {
