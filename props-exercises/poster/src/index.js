@@ -11,13 +11,22 @@ var posterText = 'The best thing since jQuery, probably.'
 
 var Poster = React.createClass ({
   render: function() {
+    var title = this.props.title;
     return (
       <div className='poster'>
-        <div className='image'>
+        <div className='image-container'>
           <img src={this.props.image} alt='react' />
         </div>
         <div className='title'>
-          {this.props.title}
+          <span className="first-letter">
+            {title.substring(0,1)}
+          </span>
+          <span className="center">
+            {title.substring(1, title.length - 1)}
+          </span>
+          <span className="last-letter">
+            {title.substring(title.length - 1)}
+          </span>
         </div>
         <div className='text'>
           {this.props.text}
