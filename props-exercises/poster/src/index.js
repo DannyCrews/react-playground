@@ -10,6 +10,11 @@ var posterText = 'The best thing since jQuery, probably.'
 
 
 var Poster = React.createClass ({
+  propTypes: {
+    image: React.PropTypes.string.isRequired,
+    title: React.PropTypes.string.isRequired,
+    text: React.PropTypes.string.isRequired,
+  },
   render: function() {
     var title = this.props.title;
     return (
