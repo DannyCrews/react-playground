@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import './index.css';
 
 var Stamp = React.createClass ({
   render: function() {
@@ -20,6 +21,7 @@ var AddressLabel = React.createClass ({
     }).isRequired
   },
   render: function() {
+    // destructuring attributes from mailingLabel object passed in as props
     var { name, addressLine1, addressLine2 } = this.props.mailingLabel; // destructure to pull object from props
     return (
       <div className='mailingLabel'>
@@ -40,6 +42,7 @@ var Envelope = React.createClass ({
   },
 
   render: function() {
+    //destructuring objects passed in as props
     var {toPerson, fromPerson} = this.props;
     // Return child components
     return (
@@ -52,6 +55,7 @@ var Envelope = React.createClass ({
   }
 });
 
+// Data to be passed in as props to Envelope component
 var returnLabel = {
   name: 'Full Name',
   addressLine1: '123 Fake Street',
