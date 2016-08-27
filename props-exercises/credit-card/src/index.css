@@ -1,5 +1,51 @@
 body {
-  margin: 0;
+  margin: 20px;
   padding: 0;
   font-family: sans-serif;
+}
+
+.card {
+  position: relative;
+  height: 378px;
+  width: 600px;
+  border-radius: 24px;
+  background-color: #2854A1;
+  color: white;
+  padding-left: 40px;
+}
+
+.name, .full-number, .first-four, .expiration {
+  font-family: "Courier", monospace;
+  position: absolute;
+  text-transform: uppercase;
+}
+
+.logo {
+  postion: absolute;
+  right: 40px;
+  top: 40px;
+  font-size: 50px;
+}
+
+.full-number {
+  bottom: 160px;
+  font-size: 46px;
+}
+
+.first-four {
+  bottom: 140px;
+  font-family: sans-serif;
+  font-size: 20px;
+  font-weight: 200;
+}
+
+.name {
+  bottom: 40px;
+  font-size: 36px;
+}
+
+.expiration {
+  font-size: 36px;
+  left: 240px;
+  bottom: 100px;
 }
